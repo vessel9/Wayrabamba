@@ -21,7 +21,7 @@ INICIO
 
 <div id="inicio" class="col-lg-10 col-md-10 col-sm-9 col-xs-12">
  
-	<div class="jumbotron" style="background-image: url('https://static.vecteezy.com/system/resources/previews/001/226/022/non_2x/background-blue-and-white-squares-vector.jpg');background-repeat: no-repeat;background-size: cover;font-family: Ginebra;" class="img-responsive" >
+	<div class="jumbotron" >
 	    <h1>Bienvenidos</h1>
 	    <p>Bienvenidos al panel de control.</p>
 	</div>
