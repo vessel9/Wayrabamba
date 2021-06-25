@@ -128,7 +128,7 @@ class GestorProductoServicio{
 
 					<input type="hidden" value="'.$item["nombreTipo"].'">
                     <input type="hidden" value="'.$item["nombreCategoria"].'">
-					<a href="#articulo'.$item["nombreNegocio"].'" data-toggle="modal">
+					<a href="#articulo'.$item["idNegocio"].'" data-toggle="modal">
 					<button class="btn btn-default">Leer Más</button>
 					</a>
 

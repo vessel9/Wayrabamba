@@ -109,7 +109,7 @@ class GestorNegocio{
 
 			echo ' <li id="'.$item["idNegocio"].'" class="bloqueNegocio">
 					<span class="handleArticle">
-					<a href="index.php?action=negocios&idBorrarNegocio='.$item["idNegocio"].'&imagenNegocio='.$item["imagenNegocio"].'">
+					<a href="index.php?action=negocio&idBorrarNegocio='.$item["idNegocio"].'&imagenNegocio='.$item["imagenNegocio"].'">
 						<i class="fa fa-times btn btn-danger"></i>
 					</a>
 					<i class="fa fa-pencil btn btn-primary editarNegocio"></i>	
@@ -190,7 +190,7 @@ class GestorNegocio{
 
 				function(isConfirm){
 						 if (isConfirm) {	   
-							window.location = "negocios";
+							window.location = "negocio";
 						  } 
 				});
 
@@ -262,7 +262,7 @@ class GestorNegocio{
 
 					swal({
 						  title: "¡OK!",
-						  text: "¡El negocio ha sido actualizado correctamente!",
+						  text: "¡El artículo ha sido actualizado correctamente!",
 						  type: "success",
 						  confirmButtonText: "Cerrar",
 						  closeOnConfirm: false
@@ -281,7 +281,15 @@ class GestorNegocio{
 
 			else{
 
-				echo "<script>console.error('consola negocio: " . $respuesta . "' );</script>";
+				echo "<script>
+				try {
+					$respuesta
+				  } catch (error) {
+					console.error(error " . $respuesta . "');
+					// expected output: ReferenceError: nonExistentFunction is not defined
+					// Note - error messages will vary depending on browser
+				  }
+				  console.log('consoila negocio: " . $respuesta . "' );</script>";
 
 			}
 

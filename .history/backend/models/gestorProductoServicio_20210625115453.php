@@ -33,13 +33,12 @@ class GestorProductoServicioModel{
 
 	}
 
-	#MOSTRAR NEGOCIO productoservicio   negocio  tipoproductoservicio
+	#MOSTRAR NEGOCIO
 	#------------------------------------------------------
-	public function mostrarProductoServicioModel($tabla1, $tabla2, $tabla3){
+	public function mostrarProductoServicioModel($tabla){
+		$stmt = Conexion::conectar()->prepare("SELECT idproductoServicio, nombreProductoServicio, descripcion, imagenRuta, precio, cantidad, disponibles, idTipoProductoServicio, idCategoria, idNegocio FROM $tabla ORDER BY idproductoServicio ASC");
 
-		$stmt = Conexion::conectar()->prepare("SELECT idproductoServicio, nombreProductoServicio, descripcion, imagenRuta, precio, cantidad, disponibles, nombreNegocio, nombreTipo, nombreCategoria FROM $tabla1 AS ps INNER JOIN $tabla2 AS n ON ps.idNegocio= n.idNegocio INNER JOIN $tabla3 AS tps ON ps.idTipoProductoServicio = tps.idTipoProductoServicio INNER JOIN categorias AS c ON ps.idNegocio= c.idCategoria");
-
-		// $stmt = Conexion::conectar()->prepare("SELECT idproductoServicio, nombreProductoServicio, descripcion, imagenRuta, precio, cantidad, disponibles, idTipoProductoServicio, idCategoria, idNegocio FROM $tabla ORDER BY idproductoServicio ASC");
+		$stmt = Conexion::conectar()->prepare("SELECT idproductoServicio, nombreProductoServicio, descripcion, imagenRuta, precio, cantidad, disponibles, idTipoProductoServicio, idCategoria, idNegocio FROM $tabla ORDER BY idproductoServicio ASC");
 
 		$stmt -> execute();
 

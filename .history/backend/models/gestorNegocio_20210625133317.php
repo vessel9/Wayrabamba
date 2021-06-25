@@ -74,7 +74,7 @@ class GestorNegocioModel{
 	#---------------------------------------------------
 	public function editarNegocioModel($datosModel, $tabla){
 
-		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET idNegocio = :idNegocio, nombreNegocio = :nombreNegocio, imagenNegocio = :imagenNegocio, telefono = :telefono, direccion = :direccion, ubicacion = :ubicacion WHERE idNegocio = :idNegocio");	
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET idNegocio = :idNegocio, nombreNegocio =imagenNegocio = :imagenNegocio, telefono = :telefono, direccion = :direccion, ubicacion = :ubicacion WHERE idNegocio = :idNegocio");	
 
 		$stmt -> bindParam(":nombreNegocio", $datosModel["nombreNegocio"], PDO::PARAM_STR);
 		$stmt -> bindParam(":imagenNegocio", $datosModel["imagenNegocio"], PDO::PARAM_STR);

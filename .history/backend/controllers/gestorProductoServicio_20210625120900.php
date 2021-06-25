@@ -122,13 +122,13 @@ class GestorProductoServicio{
 					<p>Disponibles:'.$item["disponibles"].'</p>
 					<p>tipo:'.$item["nombreTipo"].'</p>
 					<p>Categoria:'.$item["nombreCategoria"].'</p>
-					<p>Negocio:'.$item["nombreNegocio"].'</p>
+					<p>Negocio:'.$item["idNegocio"].'</p>
 
 
 
-					<input type="hidden" value="'.$item["nombreTipo"].'">
-                    <input type="hidden" value="'.$item["nombreCategoria"].'">
-					<a href="#articulo'.$item["nombreNegocio"].'" data-toggle="modal">
+					<input type="hidden" value="'.$item["idTipoProductoServicio"].'">
+                    <input type="hidden" value="'.$item["idCategoria"].'">
+					<a href="#articulo'.$item["idNegocio"].'" data-toggle="modal">
 					<button class="btn btn-default">Leer Más</button>
 					</a>
 
