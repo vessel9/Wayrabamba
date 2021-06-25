@@ -106,7 +106,7 @@ class GestorArticulos{
 
 			echo ' <li id="'.$item["id"].'" class="bloqueArticulo">
 					<span class="handleArticle">
-					<a href="index.php?action=articulos&idConfirmar">
+					<a href="index.php?action=articulos&idConfirmar='.$item["id"].'&rutaImagen='.$item["ruta"].'">
 						<i class="fa fa-times btn btn-danger"></i>
 					</a>
 					<i class="fa fa-pencil btn btn-primary editarArticulo"></i>	
@@ -182,7 +182,8 @@ class GestorArticulos{
 
 					function(isConfirm){
 							 if (isConfirm) {							
-								window.location.href="index.php?action=articulos&idBorrar='.$item["id"].'&rutaImagen='.$item["ruta"].'";							
+								swal("Deleted!", "Your imaginary file has been deleted.", "success");
+								window.location.href="./?action=articulos&op=del&id_perfil="+id;								
 							  } else {
 								event.preventDefault();
 								swal("Cancelled", "registro a salvo :)", "error");
@@ -217,7 +218,7 @@ class GestorArticulos{
 
 				swal({
 					  title: "¡OK!",
-					  text: "¡El artículo ha sido borrado correctamente ahora!",
+					  text: "¡El artículo ha sido borrado correctamente!",
 					  type: "success",
 					  confirmButtonText: "Cerrar",
 					  closeOnConfirm: false

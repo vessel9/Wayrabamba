@@ -106,7 +106,7 @@ class GestorArticulos{
 
 			echo ' <li id="'.$item["id"].'" class="bloqueArticulo">
 					<span class="handleArticle">
-					<a href="index.php?action=articulos&idConfirmar">
+					<a href="index.php?action=articulos&idBorrar='.$item["id"].'&rutaImagen='.$item["ruta"].'">
 						<i class="fa fa-times btn btn-danger"></i>
 					</a>
 					<i class="fa fa-pencil btn btn-primary editarArticulo"></i>	
@@ -155,18 +155,25 @@ class GestorArticulos{
 
 	}
 
-	#CONFIRMAR BORRAR ARTICULO
+	#BORRAR ARTICULO
 	#------------------------------------
 
-	public function confirmarBorrarArticuloController(){
+	public function borrarArticuloController(){
 		
 
 
-		if(isset($_GET["idConfirmar"])){
+
+		if(isset($_GET["idBorrar"])){
 
 
-			$respuesta = GestorArticulosModel::mostrarArticulosModel("articulos");	
-				foreach($respuesta as $row => $item) {
+			
+
+			unlink($_GET["rutaImagen"]);
+
+			$datosController = $_GET["idBorrar"];
+
+			if($datosController){
+
 					echo('<script>
 
 					swal({
@@ -182,7 +189,8 @@ class GestorArticulos{
 
 					function(isConfirm){
 							 if (isConfirm) {							
-								window.location.href="index.php?action=articulos&idBorrar='.$item["id"].'&rutaImagen='.$item["ruta"].'";							
+								swal("Deleted!", "Your imaginary file has been deleted.", "success");
+							    window.location = "articulos";
 							  } else {
 								event.preventDefault();
 								swal("Cancelled", "registro a salvo :)", "error");
@@ -192,23 +200,32 @@ class GestorArticulos{
 				</script>');
 
 			}
-		
+			if($closeOnCancel == false){
+			}
+			else if ($closeOnCancel  == false){
+				
+				$respuesta = GestorArticulosModel::borrarArticuloModel($datosController, "articulos");
+
+
+			}
 		
 	}
 }
 #BORRAR ARTICULO
 	#------------------------------------
 
-	public function borrarArticuloController(){
+	public function borrarCategoriasController(){
 		
 
-		if(isset($_GET["idBorrar"])){
+		if(isset($_GET["idBorrarCategoria"])){
 
 
-			unlink($_GET["rutaImagen"]);
+			
 
-			$datosController = $_GET["idBorrar"];
-			$respuesta = GestorArticulosModel::borrarArticuloModel($datosController, "articulos");
+			// unlink($_GET["rutaImagen"]);
+
+			$datosController = $_GET["idBorrarCategoria"];
+            $respuesta = GestorCategoriasModel::borrarCategoriasModel($datosController, "categorias");
 
 
 			if($datosController){
@@ -217,7 +234,7 @@ class GestorArticulos{
 
 				swal({
 					  title: "¡OK!",
-					  text: "¡El artículo ha sido borrado correctamente ahora!",
+					  text: "¡El artículo ha sido borrado correctamente!",
 					  type: "success",
 					  confirmButtonText: "Cerrar",
 					  closeOnConfirm: false
@@ -225,7 +242,7 @@ class GestorArticulos{
 
 				function(isConfirm){
 						 if (isConfirm) {	   
-							window.location = "articulos";
+							window.location = "categorias";
 						  } 
 				});
 

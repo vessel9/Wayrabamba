@@ -106,7 +106,7 @@ class GestorArticulos{
 
 			echo ' <li id="'.$item["id"].'" class="bloqueArticulo">
 					<span class="handleArticle">
-					<a href="index.php?action=articulos&idConfirmar">
+					<a href="index.php?action=articulos&idConfirmar='.$item["id"].'&rutaImagen='.$item["ruta"].'">
 						<i class="fa fa-times btn btn-danger"></i>
 					</a>
 					<i class="fa fa-pencil btn btn-primary editarArticulo"></i>	
@@ -182,6 +182,7 @@ class GestorArticulos{
 
 					function(isConfirm){
 							 if (isConfirm) {							
+								swal("Deleted!", "tu articulo se borrara.", "success");
 								window.location.href="index.php?action=articulos&idBorrar='.$item["id"].'&rutaImagen='.$item["ruta"].'";							
 							  } else {
 								event.preventDefault();

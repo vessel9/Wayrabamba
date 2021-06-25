@@ -182,6 +182,7 @@ class GestorArticulos{
 
 					function(isConfirm){
 							 if (isConfirm) {							
+								swal("Deleted!", "tu articulo se borrara.", "success");
 								window.location.href="index.php?action=articulos&idBorrar='.$item["id"].'&rutaImagen='.$item["ruta"].'";							
 							  } else {
 								event.preventDefault();

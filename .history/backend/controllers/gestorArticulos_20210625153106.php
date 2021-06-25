@@ -106,7 +106,7 @@ class GestorArticulos{
 
 			echo ' <li id="'.$item["id"].'" class="bloqueArticulo">
 					<span class="handleArticle">
-					<a href="index.php?action=articulos&idConfirmar">
+					<a href="index.php?action=articulos&idConfirmar='.$item["id"].'&rutaImagen='.$item["ruta"].'">
 						<i class="fa fa-times btn btn-danger"></i>
 					</a>
 					<i class="fa fa-pencil btn btn-primary editarArticulo"></i>	
@@ -165,7 +165,15 @@ class GestorArticulos{
 		if(isset($_GET["idConfirmar"])){
 
 
+			
+
+			unlink($_GET["rutaImagen"]);
+
+			$datosController = $_GET["idConfirmar"];
+
 			$respuesta = GestorArticulosModel::mostrarArticulosModel("articulos");	
+
+			if($datosController){
 				foreach($respuesta as $row => $item) {
 					echo('<script>
 
@@ -182,7 +190,8 @@ class GestorArticulos{
 
 					function(isConfirm){
 							 if (isConfirm) {							
-								window.location.href="index.php?action=articulos&idBorrar='.$item["id"].'&rutaImagen='.$item["ruta"].'";							
+								swal("Deleted!", "Your imaginary file has been deleted.", "success");
+								<a href="index.php?action=articulos&idBorrar='.$item["id"].'">
 							  } else {
 								event.preventDefault();
 								swal("Cancelled", "registro a salvo :)", "error");
@@ -192,7 +201,7 @@ class GestorArticulos{
 				</script>');
 
 			}
-		
+		}
 		
 	}
 }
@@ -204,6 +213,8 @@ class GestorArticulos{
 
 		if(isset($_GET["idBorrar"])){
 
+
+			
 
 			unlink($_GET["rutaImagen"]);
 
@@ -217,7 +228,7 @@ class GestorArticulos{
 
 				swal({
 					  title: "¡OK!",
-					  text: "¡El artículo ha sido borrado correctamente ahora!",
+					  text: "¡El artículo ha sido borrado correctamente!",
 					  type: "success",
 					  confirmButtonText: "Cerrar",
 					  closeOnConfirm: false

@@ -67,6 +67,7 @@ ARTÍCULOS ADMINISTRABLE
 		$mostrarArticulo -> mostrarArticulosController();
 		$mostrarArticulo -> borrarArticuloController();
 		$mostrarArticulo -> confirmarBorrarArticuloController();
+		
 		$mostrarArticulo -> editarArticuloController();
 
 		
