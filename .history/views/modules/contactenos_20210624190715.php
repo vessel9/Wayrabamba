@@ -40,11 +40,11 @@
     		</li>
     
     		<li>
-        		<a href="https://www.instagram.com" target="_blank">
-          		<i class="fa fa-instagram" style="font-size:24px;"></i>  
+        		<a href="http://www.vimeo.com" target="_blank">
+          		<i class="fa fa-vimeo" style="font-size:24px;"></i>  
         		</a>
     		</li>
-			</ol>
+			</ol> -->
 
 			<form method="post" onsubmit="return validarMensaje()">
 

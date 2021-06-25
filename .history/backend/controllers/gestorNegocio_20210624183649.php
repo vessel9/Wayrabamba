@@ -170,7 +170,7 @@ class GestorNegocio{
 
 			
 
-			unlink($_GET["imagenNegocio"]);
+			unlink($_GET["rutaImagen"]);
 
 			$datosController = $_GET["idBorrarNegocio"];
             $respuesta = GestorNegocioModel::borrarNegocioModel($datosController, "negocio");
@@ -190,7 +190,7 @@ class GestorNegocio{
 
 				function(isConfirm){
 						 if (isConfirm) {	   
-							window.location = "negocio";
+							window.location = "tipoproductoservicio";
 						  } 
 				});
 

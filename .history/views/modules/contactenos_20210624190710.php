@@ -16,7 +16,7 @@
     			<ul>
 	              <li><span class="glyphicon glyphicon-phone"></span>  (57)(4) 234 56 43</li>
 	              <li><span class="glyphicon glyphicon-map-marker"></span>  Calle 45F 32 - 45</li>
-	              <li><span class="glyphicon glyphicon-envelope"></span>  Wayrabamba@gmail.com</li>    
+	              <li><span class="glyphicon glyphicon-envelope"></span>  Wayrabamba@correo.com</li>    
 	          	</ul>      
     		</h4>
 
@@ -40,11 +40,11 @@
     		</li>
     
     		<li>
-        		<a href="https://www.instagram.com" target="_blank">
-          		<i class="fa fa-instagram" style="font-size:24px;"></i>  
+        		<a href="http://www.vimeo.com" target="_blank">
+          		<i class="fa fa-vimeo" style="font-size:24px;"></i>  
         		</a>
     		</li>
-			</ol>
+			</ol> -->
 
 			<form method="post" onsubmit="return validarMensaje()">
 

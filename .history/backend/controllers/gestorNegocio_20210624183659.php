@@ -190,7 +190,7 @@ class GestorNegocio{
 
 				function(isConfirm){
 						 if (isConfirm) {	   
-							window.location = "negocio";
+							window.location = "tipoproductoservicio";
 						  } 
 				});
 
