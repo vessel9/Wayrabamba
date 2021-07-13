@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-06-2021 a las 00:52:36
+-- Tiempo de generación: 13-07-2021 a las 11:18:28
 -- Versión del servidor: 10.1.37-MariaDB
 -- Versión de PHP: 7.3.1
 
@@ -64,10 +64,11 @@ CREATE TABLE `categorias` (
 --
 
 INSERT INTO `categorias` (`idCategoria`, `nombreCategoria`) VALUES
-(1, 'Comida'),
+(1, 'AlimentaciÃ³n'),
 (2, 'Hospedaje'),
 (3, 'Tour'),
-(4, 'Vestimenta');
+(4, 'Vestimenta'),
+(5, 'Artesania');
 
 -- --------------------------------------------------------
 
@@ -115,7 +116,8 @@ INSERT INTO `mensajes` (`id`, `nombre`, `email`, `mensaje`, `fecha`, `revision`)
 (10, 'Natalia', 'naty@hotmail.com', 'Lorem ipsum 2 dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.', '2016-12-13 15:59:57', 1),
 (11, 'Miguel', 'miguel@hotmail.com', 'Lorem ipsum 1 dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet,consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit', '2017-01-13 14:07:02', 1),
 (12, 'Ana', 'ana@hotmail.com', 'Lorem ipsum 1 dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet,consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit', '2017-01-13 14:15:19', 1),
-(13, 'Maria', 'maria@hotmail.com', 'Lorem ipsum 1 dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet,consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit', '2017-01-13 14:27:51', 1);
+(13, 'Maria', 'maria@hotmail.com', 'Lorem ipsum 1 dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet,consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit', '2017-01-13 14:27:51', 1),
+(14, 'Christian ', 'elarte@outlook.es', 'mensaje de prueba', '2021-06-29 18:14:47', 1);
 
 -- --------------------------------------------------------
 
@@ -128,17 +130,22 @@ CREATE TABLE `negocio` (
   `nombreNegocio` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
   `imagenNegocio` text CHARACTER SET latin1 NOT NULL,
   `telefono` varchar(10) COLLATE utf8_spanish_ci NOT NULL,
+  `correo` varchar(60) CHARACTER SET latin1 NOT NULL,
   `direccion` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
-  `ubicacion` varchar(100) COLLATE utf8_spanish_ci NOT NULL
+  `ubicacion` longtext COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `negocio`
 --
 
-INSERT INTO `negocio` (`idNegocio`, `nombreNegocio`, `imagenNegocio`, `telefono`, `direccion`, `ubicacion`) VALUES
-(1, 'Heladeria Tradicional SanFelipe', 'views/images/negocios/negocio694.jpg', '0921321134', 'OE4 SAN CAR 123 Y TEJO TREBOL ', 'pendiente link'),
-(3, 'Recuerdos y Tejidos Mary', 'views/images/negocios/negocio880.jpg', '0976576345', 'calle gartamary y juangar oe3 56', 'asdfghkyhbg342t54y65');
+INSERT INTO `negocio` (`idNegocio`, `nombreNegocio`, `imagenNegocio`, `telefono`, `correo`, `direccion`, `ubicacion`) VALUES
+(1, 'Heladeria Tradicional SanFelipe', 'views/images/negocios/negocio989.jpg', '0921321134', 'eladoscaseros@gmail.com', 'OE4 SAN CAR 123 Y TEJO TREBOL 2', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63836.99152274789!2d-78.54297725887605!3d-0.10222423090562008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d585086e96602d%3A0x7117db9cccc9d018!2sEl%20Condado%2C%20Quito!5e0!3m2!1ses-419!2sec!4v1625618152301!5m2!1ses-419!2sec\" width=\"400\" height=\"300\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\"></iframe>'),
+(3, 'Recuerdos y Tejidos Mary', 'views/images/negocios/negocio880.jpg', '0976576345', 'receurdos@gmail.com', 'calle gartamary y juangar oe3 56', 'asdfghkyhbg342t54y65'),
+(4, 'Holet Bronx Cotopaxi', 'views/images/negocios/negocio754.jpg', '0987667865', '', 'latacunga 0e4 154', 'wertfyujhkl;,,mkbjk '),
+(5, 'Hotel Cotopaxi', 'views/images/negocios/negocio289.jpg', '0987765754', 'hotelcotopaxi@gmail.com', 'latacunga 0E4 ', 'qwertfghjkl'),
+(6, 'Ropa y confecciones Tradicionales Martha', 'views/images/negocios/negocio829.jpg', '1231234344', 'confeccionesmartha@hotmail.es', 'la kenedy y la miranda 0e4', 'pendiente'),
+(7, 'Restaurante Delicias', 'views/images/negocios/negocio206.jpg', '0924322342', 'restaurantedelicia@hotmail.com', 'Entre la calle lalo garza', 'pendiente');
 
 -- --------------------------------------------------------
 
@@ -154,6 +161,7 @@ CREATE TABLE `productoservicio` (
   `precio` decimal(10,2) NOT NULL,
   `cantidad` int(10) NOT NULL,
   `disponibles` int(10) NOT NULL,
+  `estado` varchar(10) CHARACTER SET latin1 NOT NULL,
   `idTipoProductoServicio` int(11) NOT NULL,
   `idCategoria` int(11) NOT NULL,
   `idNegocio` int(11) NOT NULL
@@ -163,8 +171,12 @@ CREATE TABLE `productoservicio` (
 -- Volcado de datos para la tabla `productoservicio`
 --
 
-INSERT INTO `productoservicio` (`idproductoServicio`, `nombreProductoServicio`, `descripcion`, `imagenRuta`, `precio`, `cantidad`, `disponibles`, `idTipoProductoServicio`, `idCategoria`, `idNegocio`) VALUES
-(1, 'helado salcedo', 'heklado de 3 capas con sabor a mora vainilla y taxo.', '', '10.50', 1, 1000, 1, 1, 1);
+INSERT INTO `productoservicio` (`idproductoServicio`, `nombreProductoServicio`, `descripcion`, `imagenRuta`, `precio`, `cantidad`, `disponibles`, `estado`, `idTipoProductoServicio`, `idCategoria`, `idNegocio`) VALUES
+(4, 'Alojamientos', 'Una noche y dia', 'views/images/productoservicios/productoservicio331.jpg', '32.00', 2, 50, '', 2, 2, 5),
+(7, 'helados de Salcedo', 'helado de tres capas con sabor de mora vainilla y taxo', 'views/images/productoservicios/productoservicio653.jpg', '1.00', 1, 50, '', 1, 1, 4),
+(10, 'Pruebas', 'descripciÃ³n de prueba', 'views/images/productoservicios/productoservicio711.jpg', '43.00', 34, 23, 'privado', 1, 5, 7),
+(15, 'desayunos y almuerzos', 'almuerzos', 'views/images/productoservicios/productoservicio294.jpg', '5.00', 3, 6, '', 1, 1, 7),
+(16, 'nuevo', 'dsadsa', 'views/images/productoservicios/productoservicio101.jpg', '1.00', 3, 3, 'privado', 1, 2, 4);
 
 -- --------------------------------------------------------
 
@@ -211,7 +223,8 @@ INSERT INTO `suscriptores` (`id`, `nombre`, `email`, `revision`) VALUES
 (3, 'Natalia', 'naty@hotmail.com', 1),
 (4, 'Miguel', 'miguel@hotmail.com', 1),
 (5, 'Ana', 'ana@hotmail.com', 1),
-(6, 'Maria', 'maria@hotmail.com', 1);
+(6, 'Maria', 'maria@hotmail.com', 1),
+(7, 'Christian ', 'elarte@outlook.es', 1);
 
 -- --------------------------------------------------------
 
@@ -229,8 +242,8 @@ CREATE TABLE `tipoproductoservicio` (
 --
 
 INSERT INTO `tipoproductoservicio` (`idTipoProductoServicio`, `nombreTipo`) VALUES
-(1, 'Productos'),
-(2, 'Servicios');
+(1, 'Producto'),
+(2, 'Servicio');
 
 -- --------------------------------------------------------
 
@@ -254,7 +267,8 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`id`, `usuario`, `password`, `email`, `photo`, `rol`, `intentos`) VALUES
 (3, 'admin', '$2a$07$asxx54ahjppf45sd87a5aunxs9bkpyGmGE/.vekdjFg83yRec789S', 'admin@hotmail.com', 'views/images/perfiles/perfil847.jpg', 0, 0),
-(6, 'pepe', '$2a$07$asxx54ahjppf45sd87a5auxq/SS293XhTEeizKWMnfhnpfay0AALe', 'pepe@hotmail.com', 'views/images/perfiles/perfil894.jpg', 1, 0);
+(6, 'Luis12', '$2a$07$asxx54ahjppf45sd87a5auGZEtGHuyZwm.Ur.FJvWLCql3nmsMbXy', 'pepe@hotmail.com', 'views/images/perfiles/perfil556.jpg', 1, 0),
+(7, 'Juan', '$2a$07$asxx54ahjppf45sd87a5auJRR6foEJ7ynpjisKtbiKJbvJsoQ8VPS', 'otro@gmail.com', 'views/images/perfiles/perfil925.jpg', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -355,7 +369,7 @@ ALTER TABLE `articulos`
 -- AUTO_INCREMENT de la tabla `categorias`
 --
 ALTER TABLE `categorias`
-  MODIFY `idCategoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idCategoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `galeria`
@@ -367,19 +381,19 @@ ALTER TABLE `galeria`
 -- AUTO_INCREMENT de la tabla `mensajes`
 --
 ALTER TABLE `mensajes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `negocio`
 --
 ALTER TABLE `negocio`
-  MODIFY `idNegocio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idNegocio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `productoservicio`
 --
 ALTER TABLE `productoservicio`
-  MODIFY `idproductoServicio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idproductoServicio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de la tabla `slide`
@@ -391,7 +405,7 @@ ALTER TABLE `slide`
 -- AUTO_INCREMENT de la tabla `suscriptores`
 --
 ALTER TABLE `suscriptores`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `tipoproductoservicio`
@@ -403,13 +417,13 @@ ALTER TABLE `tipoproductoservicio`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `videos`
 --
 ALTER TABLE `videos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restricciones para tablas volcadas
