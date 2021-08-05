@@ -58,7 +58,7 @@ class Negocios{
 			    			<img src="backend/'.$item["imagenNegocio"].'" width="100%" style="margin-bottom:20px">
 							<p class="parrafoContenido"><b><spam class="fa fa-phone fa-lg" aria-hidden="true"></spam> Telefono: </b> '.$item["telefono"].'</p>
 							<h5><b><spam class="fa fa-exchange fa-lg" aria-hidden="true"></spam>  Dirección:</b> '.$item["direccion"].'</h5>
-							<b><spam class="fa fa-map-marker fa-lg" aria-hidden="true"></spam> Ubicacion: </b><div class="col-md-10 col-md-offset-2">'.$item["ubicacion"].'</div>
+							<b>Ubicacion: </b><div class="col-md-10 col-md-offset-2">'.$item["ubicacion"].'</div>
 						</div>
 
 							<div class="modal-footer" style="border:1px solid #eee">

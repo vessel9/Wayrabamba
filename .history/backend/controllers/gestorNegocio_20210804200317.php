@@ -170,6 +170,7 @@ class GestorNegocio{
 						<div class="modal-header" style="border:1px solid #eee">
 							<button type="button" class="close" data-dismiss="modal">&times;</button>
 						 <h3 class="modal-title">'.$item["nombreNegocio"].'</h3>
+			        
 						</div>
 
 						<div class="modal-body" style="border:1px solid #eee">

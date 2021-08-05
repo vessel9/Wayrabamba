@@ -166,17 +166,23 @@ class GestorNegocio{
 				</div>
 
 				<div id="negocio'.$item["idNegocio"].'" class="modal fade">
+
 					<div class="modal-dialog modal-content">
+
 						<div class="modal-header" style="border:1px solid #eee">
+				        
 							<button type="button" class="close" data-dismiss="modal">&times;</button>
 						 <h3 class="modal-title">'.$item["nombreNegocio"].'</h3>
+			        
 						</div>
 
 						<div class="modal-body" style="border:1px solid #eee">
+			        
 							<img src="'.$item["imagenNegocio"].'" width="100%" style="margin-bottom:20px">
-							<p class="parrafoContenido"><b><spam class="fa fa-phone fa-lg" aria-hidden="true"></spam> Telefono: </b> '.$item["telefono"].'</p>
-							<h5><b><spam class="fa fa-exchange fa-lg" aria-hidden="true"></spam>  Direccion:</b> '.$item["direccion"].'</h5>
+							<p class="parrafoContenido"><b>Telefono: </b> '.$item["telefono"].'</p>
+							<h5><b><spam class="fa fa-adjust fa-lg" aria-hidden="true"></spam>  Direccion:</b> '.$item["direccion"].'</h5>
 							<b><spam class="fa fa-map-marker fa-lg" aria-hidden="true"></spam> Ubicacion: </b><div class="col-md-10 col-md-offset-2">'.$item["ubicacion"].'</div>
+			        
 						</div>
 
 						<div class="modal-footer" style="border:1px solid #eee">

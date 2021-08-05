@@ -16,7 +16,7 @@ class GestorNegocio{
 
 		else{
 
-			$aleatorio = mt_rand(100, 999);
+			$aleatorio = mt_rand(800, 400);
 			$ruta = "../../views/images/negocios/temp/negocio".$aleatorio.".jpg";
 			$origen = imagecreatefromjpeg($datos);
 			$destino = imagecrop($origen, ["x"=>0, "y"=>0, "width"=>800, "height"=>400]);
@@ -50,15 +50,20 @@ class GestorNegocio{
 
 			$origen = imagecreatefromjpeg($imagen);
 
-			$destino = imagecrop($origen, ["x"=>0, "y"=>0, "width"=>800, "height"=>400]);
+			// $destino = imagecrop($origen, ["x"=>30, "y"=>20, "width"=>800, "height"=>400]);
+			$destino = imagecropauto($origen, IMG_CROP_DEFAULT);
+
 
 			imagejpeg($destino, $ruta);
 
-			$datosController = array("nombreNegocio"=>$_POST["nombresNegocios"],
+			$datosController = array("nombreNegocio"=>ucwords($_POST["nombresNegocios"]),
 				                     "imagenNegocio"=>$ruta,
 			 	                      "telefono"=>$_POST["telefonoNegocio"],
-			 	                      "direccion"=>$_POST["direccionNegocio"],
-                                      "ubicacion"=>$_POST["ubicacionNegocio"]);
+									   "linkWhatsApp"=>$_POST["WhatsApp"],
+									   "correo"=>$_POST["correoNegocio"],
+			 	                      "direccion"=>strtoupper($_POST["direccionNegocio"]),
+                                      "ubicacion"=>$_POST["ubicacionNegocio"],
+									  "estadoNegocio"=>$_POST["estadoNegocios"]);
 
 			$respuesta = GestorNegocioModel::guardarNegocioModel($datosController, "negocio");
 
@@ -68,7 +73,7 @@ class GestorNegocio{
 
 					swal({
 						  title: "¡OK!",
-						  text: "¡El artículo ha sido creado correctamente!",
+						  text: "¡El negocio ha sido creado correctamente!",
 						  type: "success",
 						  confirmButtonText: "Cerrar",
 						  closeOnConfirm: false
@@ -107,25 +112,58 @@ class GestorNegocio{
 
 		foreach($respuesta as $row => $item) {
 
-			echo ' <li id="'.$item["idNegocio"].'" class="bloqueNegocio">
+			echo ' <div class="card-columns">
+			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+			<li class="card" id="'.$item["idNegocio"].'" class="bloqueArticulo" style="max-width:100%;width:800;height:400;">
 					<span class="handleArticle">
-					<a href="index.php?action=negocios&idBorrarNegocio='.$item["idNegocio"].'&imagenNegocio='.$item["imagenNegocio"].'">
+					 <a href="index.php?action=negocios&idConfirmarNegocio='.$item["idNegocio"].'&confirmaimagenNegocio='.$item["imagenNegocio"].'">
 						<i class="fa fa-times btn btn-danger"></i>
 					</a>
-					<i class="fa fa-pencil btn btn-primary editarProductoServicio"></i>	
+					<i class="fa fa-pencil btn btn-primary editarNegocio"></i>	
 					</span>
+					
 					<img src="'.$item["imagenNegocio"].'" class="img-thumbnail">
 					<h1>'.$item["nombreNegocio"].'</h1>
-					<p>'.$item["telefono"].'</p>
-					<h5>'.$item["direccion"].'</h5>
-					<input type="hidden" value="'.$item["ubicacion"].'">
+					<br><br>
+					<div class="col-xs-3 col-sm-3 col-md-3">
+					<label><spam class="fa fa-phone fa-lg" aria-hidden="true"></spam> Telefono:</label>
+				    </div>
+				    <div class="col-xs-9 col-sm-9 col-md-9">
+				    <p>'.$item["telefono"].'</p>
+				    </div>
+					<div class="col-xs-3 col-sm-3 col-md-3">
+					<label><spam class="fa fa-whatsapp fa-lg" aria-hidden="true"></spam> WhatsApp:</label>
+				    </div>
+					<div class="col-xs-9 col-sm-9 col-md-9">
+				    <p><a href="'.$item["linkWhatsApp"].'">'.$item["linkWhatsApp"].'</a></p>
+				    </div>
+					<div class="col-xs-3 col-sm-3 col-md-3">
+					<label><spam class="fa fa-envelope-o fa-lg" aria-hidden="true"></spam> Correo:</label>
+				    </div>
+					<div class="col-xs-9 col-sm-9 col-md-9">
+				    <h4>'.$item["correo"].'</h4>
+				    </div>
+					<div class="col-xs-3 col-sm-3 col-md-3">
+					<label><spam class="fa fa-exchange fa-lg" aria-hidden="true"></spam> Direccion:</label>
+				    </div>
+					<div class="col-xs-9 col-sm-9 col-md-9">
+				    <h5>'.$item["direccion"].'</h5>
+				    </div>
+					<div class="col-xs-3 col-sm-3 col-md-3">
+					<label><spam class="fa fa-adjust fa-lg" aria-hidden="true"></spam> Estado:</label>
+				    </div>
+					<div class="col-xs-9 col-sm-9 col-md-9">
+				    <ul>'.$item["estadoNegocio"].'</ul>
+				    </div>
+					<h6 style="display:none">'.$item["ubicacion"].'</h6>
 					<a href="#negocio'.$item["idNegocio"].'" data-toggle="modal">
-					<button class="btn btn-default">Leer Más</button>
+					<div class="col-xs-6 col-sm-6 col-md-12">
+					<button class="btn btn-default">Leer ubicación...</button>
+					</div>
 					</a>
-
-					<hr>
-
 				</li>
+				</div>
+				</div>
 
 				<div id="negocio'.$item["idNegocio"].'" class="modal fade">
 
@@ -141,7 +179,9 @@ class GestorNegocio{
 						<div class="modal-body" style="border:1px solid #eee">
 			        
 							<img src="'.$item["imagenNegocio"].'" width="100%" style="margin-bottom:20px">
-							<p class="parrafoContenido">'.$item["telefono"].'</p>
+							<p class="parrafoContenido"><b>Telefono: </b> '.$item["telefono"].'</p>
+							<h5><b><spam class="fa fa-adjust fa-lg" aria-hidden="true"></spam>  Direccion:</b> '.$item["direccion"].'</h5>fa fa-map-marker
+							<b><spam class="fa fa-adjust fa-lg" aria-hidden="true"></spam> Ubicacion: </b><div class="col-md-10 col-md-offset-2">'.$item["ubicacion"].'</div>
 			        
 						</div>
 
@@ -158,6 +198,48 @@ class GestorNegocio{
 		}
 
 	}
+	
+	#CONFIRMAR BORRAR NEGOCIO
+	#------------------------------------
+	public function confirmarBorrarNegocioController(){
+		
+
+
+		if(isset($_GET["idConfirmarNegocio"])){
+			$respuesta = GestorNegocioModel::mostrarNegocioModel("negocio");	
+			foreach($respuesta as $row => $item) {
+					echo('<script>
+
+					swal({
+						  title: "Cuidado!",
+						  text: "¡Desea borrar el Negocio!",
+						  showCancelButton: true,
+						  confirmButtonClass: "btn-danger",
+						  confirmButtonText: "Si, borrar!",
+						  cancelButtonText: "No, cancelar!",
+						  closeOnConfirm: false,
+						  closeOnCancel: false
+					},
+
+					function(isConfirm){
+							 if (isConfirm) {							
+								window.location.href="index.php?action=negocios&idBorrarNegocio='.$_GET["idConfirmarNegocio"].'&imagenNegocio='.$_GET["confirmaimagenNegocio"].'";							
+							  } else {
+								event.preventDefault();
+								swal("Cancelled", "registro a salvo :)", "error");
+								setTimeout(()=>{
+									window.location = "negocios";
+								},1000);
+							  }
+					});
+
+				</script>');
+
+			}
+		
+		
+	}
+}
 
 	#BORRAR NEGOCIO
 	#------------------------------------
@@ -220,8 +302,10 @@ class GestorNegocio{
 				$ruta = "views/images/negocios/negocio".$aleatorio.".jpg";
 
 				$origen = imagecreatefromjpeg($imagen);
+				// $destino = imagecrop($origen, ["x"=>0, "y"=>0, "width"=>800, "height"=>400]);
 
-				$destino = imagecrop($origen, ["x"=>0, "y"=>0, "width"=>800, "height"=>400]);
+
+				$destino = imagecropauto($origen, IMG_CROP_DEFAULT);
 
 				imagejpeg($destino, $ruta);
 
@@ -247,11 +331,14 @@ class GestorNegocio{
 
 			}
 		    $datosController = array("idNegocio"=>$_POST["idNegocio"],
-                                    "nombreNegocio"=>$_POST["editarNombreNegocio"],
+                                    "nombreNegocio"=>ucwords($_POST["editarNombreNegocio"]),
 				                     "imagenNegocio"=>$ruta,
 			 	                      "telefono"=>$_POST["editarTelefono"],
-			 	                      "direccion"=>$_POST["editarDireccion"],
-                                      "ubicacion"=>$_POST["editarUbicacion"]);
+									   "linkWhatsApp"=>$_POST["editarWhatsApp"],
+									   "correo"=>$_POST["editarCorreo"],
+			 	                      "direccion"=>strtoupper($_POST["editarDireccion"]),
+                                      "ubicacion"=>$_POST["editarUbicacion"],
+									  "estadoNegocio"=>$_POST["editarEstadoNegocios"]);
 			
 
 			$respuesta = GestorNegocioModel::editarNegocioModel($datosController, "negocio");

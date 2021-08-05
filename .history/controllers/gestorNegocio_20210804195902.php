@@ -55,10 +55,11 @@ class Negocios{
 			  		 		<h3 class="modal-title">'.$item["nombreNegocio"].'</h3>
 						</div>
 						<div class="modal-body" style="border:1px solid #eee">
-			    			<img src="backend/'.$item["imagenNegocio"].'" width="100%" style="margin-bottom:20px">
-							<p class="parrafoContenido"><b><spam class="fa fa-phone fa-lg" aria-hidden="true"></spam> Telefono: </b> '.$item["telefono"].'</p>
-							<h5><b><spam class="fa fa-exchange fa-lg" aria-hidden="true"></spam>  Dirección:</b> '.$item["direccion"].'</h5>
-							<b><spam class="fa fa-map-marker fa-lg" aria-hidden="true"></spam> Ubicacion: </b><div class="col-md-10 col-md-offset-2">'.$item["ubicacion"].'</div>
+			            
+			    			<img src="backend/'.$item["imagenNegocio"].'" width="50%" style="margin-bottom:20px">
+							<h5><b>Direccion:</b> '.$item["direccion"].'</h5>
+							<b>Ubicacion: </b><div class="col-md-10 col-md-offset-2">'.$item["ubicacion"].'</div>
+			            
 						</div>
 
 							<div class="modal-footer" style="border:1px solid #eee">
