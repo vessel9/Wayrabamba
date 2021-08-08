@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	
 	<meta charset="UTF-8">
-	<title>FrontEnd</title>
+	<title>Wayrabamba</title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -28,7 +29,9 @@
 
 <body>
 
+
 	<div class="container-fluid">
+		
 
 		<!--=====================================
 		CABEZOTE
@@ -41,6 +44,8 @@
 		<!--=====================================
 		SLIDE
 		======================================-->
+
+		
 		
 		<?php include "modules/slide.php"; ?>
 
@@ -97,6 +102,7 @@
 		======================================-->
 
 		<?php include "modules/contactenos.php"; ?>
+
 		
 		<!--====  Fin de CONTÁCTENOS ====-->
 
@@ -107,10 +113,11 @@
 		<?php include "modules/articuloModal.php"; ?>	
 
     	<!--====  Fin de ARTICULO MODAL ====-->
+	
 		
 	</div>
 
-
+	<?php include "./views/modules/chatbot.php"; ?>	
 
 
 <script src="views/js/script.min.js"></script>

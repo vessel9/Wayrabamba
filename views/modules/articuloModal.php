@@ -5,14 +5,14 @@
 			 <div class="modal-header" style="border:1px solid #eee">
             
    		<button type="button" class="close" data-dismiss="modal">&times;</button>
-  		 <h3 class="modal-title">Lorem Ipsum</h3>
+  		 <h3 class="modal-title"></h3>
             
 		</div>
 
 		<div class="modal-body" style="border:1px solid #eee">
             
-    	<img src="views/images/articulos/landscape02.jpg" width="100%" style="margin-bottom:20px">
-    	<p class="parrafoContenido text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    	<img  width="100%" style="margin-bottom:20px">
+    	<p class="parrafoContenido text-justify"></p>
             
 		</div>
 

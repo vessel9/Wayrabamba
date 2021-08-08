@@ -20,4 +20,4 @@ nav#botonera{margin:2% 0;width:100%}nav#botonera ul{width:100%}nav#botonera ul l
 #botonera{overflow-x:hidden}#botonera ul li a{padding:10px 30px}#slide ul{position:relative;margin:auto;margin-bottom:20px;height:140px;width:400%}#slide div#slideIzq span{position:absolute;font-size:20px;color:white;top:40%;left:30px;text-shadow:0 0 10px #000;cursor:pointer}
 #slide div#slideDer span{position:absolute;font-size:20px;color:white;top:40%;right:30px;text-shadow:0 0 10px #000;cursor:pointer}.slideCaption{display:none}
 #indicadores{display:none}#galeria ul li{float:left;width:50%}#galeria ul li img{width:100%}#articulos ul li img{float:left;width:100%;margin:10px auto}
-}#scrollUp{bottom:20px;right:20px;width:50px;height:50px;border-radius:100%;background:url(../images/flecha.jpg)}
+}#scrollUp{bottom:20px;width:50px;height:50px;border-radius:100%;background:url(../images/flecha.jpg)}

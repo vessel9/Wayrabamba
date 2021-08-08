@@ -46,6 +46,7 @@
         		</a>
     		</li>
 			</ol>
+			
 
 			<form method="post" onsubmit="return validarMensaje()">
 
@@ -67,5 +68,6 @@
 		?>
 				
 	</div>
+
 
 </footer>
