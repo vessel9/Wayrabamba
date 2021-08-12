@@ -33,15 +33,12 @@
 			</li>
 
 			<li  style="background: #333">
-				<a href="chatbot" style="color: #fff">
-      			<i class="fa fa-weixin"></i>'; 
+				<a href="suscriptores" style="color: #fff">
+      			<i class="fa fa-bell"></i>'; 
       		
 
-      				// $revisarChat = new GestorChat();
-					// $revisarChat -> suscriptoresSinRevisarController();	
-
-		echo '</a>
-			</li>
+      				$revisarSuscriptores = new SuscriptoresController();
+					$revisarSuscriptores -> suscriptoresSinRevisarController();	
 					
       			
 			

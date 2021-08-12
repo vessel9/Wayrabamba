@@ -34,7 +34,7 @@
 
 			<li  style="background: #333">
 				<a href="chatbot" style="color: #fff">
-      			<i class="fa fa-weixin"></i>'; 
+      			<i class="fa fa-bell"></i>'; 
       		
 
       				// $revisarChat = new GestorChat();
