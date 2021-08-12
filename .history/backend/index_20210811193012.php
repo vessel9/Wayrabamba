@@ -29,7 +29,6 @@ require_once "controllers/gestorMensajes.php";
 require_once "controllers/gestorSuscriptores.php";
 require_once "controllers/gestorPerfiles.php";
 require_once "controllers/gestorCategorias.php";
-require_once "controllers/gestorChat.php";
 require_once "controllers/gestorNegocio.php";
 require_once "controllers/gestorProductoServicio.php";
 require_once "controllers/gestorTipoProductoServicio.php";

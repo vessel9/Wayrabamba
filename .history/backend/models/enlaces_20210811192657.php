@@ -9,7 +9,7 @@ class EnlacesModels{
 		   $enlaces == "slide" ||
 		   $enlaces == "articulos" ||
 		   $enlaces == "categorias" ||
-		   $enlaces == "chatbot" ||
+		   $enlaces == "categorias" ||
 		   $enlaces == "negocios" ||
 		   $enlaces == "tipoproductoservicio" ||
 		   $enlaces == "productoservicios" ||

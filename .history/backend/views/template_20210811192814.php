@@ -59,7 +59,7 @@
 	<script src="views/js/gestorSlide.js"></script>
 	<script src="views/js/gestorArticulos.js"></script>
 	<script src="views/js/gestorCategorias.js"></script>
-	<script src="views/js/gestorChatbot.js"></script>
+	<script src="views/js/gestorC.js"></script>
 	<script src="views/js/gestorNegocio.js"></script>
 	<script src="views/js/gestorProductoServicio.js"></script>
 	<script src="views/js/gestorTipoProductoServicio.js"></script>
