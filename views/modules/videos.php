@@ -2,7 +2,7 @@
 
 	<hr>
 	
-	<h1 class="text-center text-info"><b>GALERÍA DE VIDEOS</b></h1>
+	<h1 class="text-center text-info"><b><span class="glyphicon glyphicon-expand" ></span> GALERÍA DE VIDEOS</b></h1>
 
 	<hr>
 
