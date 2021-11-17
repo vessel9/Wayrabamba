@@ -17,7 +17,9 @@ include "views/modules/cabezote.php";
 <!--=====================================
 MENSAJES        
 ======================================-->
-
+<?php 
+if($_SESSION["rol"] == 0){
+	?>
 <div id="bandejaMensajes" class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
  
 	 <div >
@@ -82,5 +84,9 @@ $(window).load(function(){
 })
 
 </script>
-
+<?php
+} else{
+echo'no tienes acceso';
+}
+?>
 <!--====  Fin de MENSAJES  ====-->
