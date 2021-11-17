@@ -84,7 +84,7 @@ class GestorChat{
 
 							 </div>
 								<div class="form-group text-center">
-									<input type="submit" id="guardarPerfil" value="Actualizar tipo" class="btn btn-primary">
+									<input type="submit" id="guardarPerfil" value="Actualizar pregunta" class="btn btn-primary">
 								</div>
 						</form>
 					</div>
