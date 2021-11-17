@@ -21,7 +21,6 @@ include "views/modules/cabezote.php";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reporte de visitas - By Parzibyte</title>
     <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.1/css/bulma.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
@@ -52,7 +51,7 @@ $visitas = obtenerVisitasEnRango($inicio, $fin);
             <div class="card">
                 <header class="card-header">
                     <p class="card-header-title">
-                        Estadísticas entre <?php echo $inicio ?> y <?php echo $fin ?>
+                        Numero de Visitas
                     </p>
                 </header>
                 <div class="card-content">
@@ -60,19 +59,6 @@ $visitas = obtenerVisitasEnRango($inicio, $fin);
                         <form action="visitas">
                             <input type="hidden" name="hoy" value="<?php echo $hoy ?>">
                             <div class="field is-grouped">
-                                <p class="control is-expanded">
-                                    <label>Desde: </label>
-                                    <input class="input" type="date" name="inicio" value="<?php echo $inicio ?>">
-                                </p>
-                                <p class="control is-expanded">
-                                    <label>Hasta: </label>
-                                    <input class="input" type="date" name="fin" value="<?php echo $fin ?>">
-                                </p>
-                                <p class="control">
-                                    <!--La etiqueta es invisible a propósito para que tome el espacio y alinee el botón-->
-                                    <label style="color: white;">ª</label>
-                                    <input type="submit" value="OK" class="button is-success input">
-                                </p>
                             </div>
                         </form>
                         <canvas id="grafica"></canvas>
@@ -86,26 +72,11 @@ $visitas = obtenerVisitasEnRango($inicio, $fin);
             <div class="card">
                 <header class="card-header">
                     <p class="card-header-title">
-                        Estadísticas de <?php echo $hoy ?>
+                        Visitas de nuestra pagina hoy
                     </p>
                 </header>
                 <div class="card-content">
                     <div class="content">
-                        <form action="visitas" class="mb-2">
-                            <input type="hidden" name="inicio" value="<?php echo $inicio ?>">
-                            <input type="hidden" name="fin" value="<?php echo $fin ?>">
-                            <div class="field is-grouped">
-                                <p class="control is-expanded">
-                                    <label>Fecha: </label>
-                                    <input class="input" type="date" name="hoy" value="<?php echo $hoy ?>">
-                                </p>
-                                <p class="control">
-                                    <!--La etiqueta es invisible a propósito para que tome el espacio y alinee el botón-->
-                                    <label style="color: white;">ª</label>
-                                    <input type="submit" value="OK" class="button is-success input">
-                                </p>
-                            </div>
-                        </form>
                         <div class="field is-grouped is-grouped-multiline">
                             <div class="control">
                                 <div class="tags has-addons">
