@@ -15,8 +15,8 @@
 
     		<h4 class="blockquote-reverse text-primary">
     			<ul>
-	              <li><span class="glyphicon glyphicon-phone"></span>  (57)(4) 234 56 43</li>
-	              <li><span class="glyphicon glyphicon-map-marker"></span>  Calle 45F 32 - 45</li>
+	              <li><span class="glyphicon glyphicon-phone"></span>  (+593)987735451</li>
+	              <li><span class="glyphicon glyphicon-map-marker"></span>  Cotopaxi</li>
 	              <li><span class="glyphicon glyphicon-envelope"></span>  Wayrabamba@gmail.com</li>    
 	          	</ul>      
     		</h4>
