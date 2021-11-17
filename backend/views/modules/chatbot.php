@@ -27,10 +27,11 @@ GESTOR DE PREGUNTAS Y RESPUESTAS PARA EL CHATBOT
 	<div id="agregarChat" style="display:none">
 		
 		<form method="post" enctype="multipart/form-data">
-
+		<br>
 			<input name="preguntaChat"  type="text" placeholder="Pregunta ?" class="form-control" required>
+			<br>
             <input name="respuestaChat"  type="text" placeholder="Respuesta =" class="form-control" required>
-
+			<br>
 			<input type="submit" id="guardarChat" value="Guardar Pregunta/Respuesta" class="btn btn-primary">
 
 		</form>
