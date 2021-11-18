@@ -98,7 +98,6 @@ $visitas = obtenerVisitasEnRango($inicio, $fin);
                                     <th>Página</th>
                                     <th>Visitas</th>
                                     <th>Visitantes</th>
-                                    <th>Estadísticas</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -107,11 +106,6 @@ $visitas = obtenerVisitasEnRango($inicio, $fin);
                                         <td><a target="_blank" href="<?php echo $pagina->url ?>"><?php echo $pagina->pagina ?></a></td>
                                         <td><?php echo $pagina->conteo_visitas ?></td>
                                         <td><?php echo $pagina->conteo_visitantes ?></td>
-                                        <td>
-                                            <a class="button is-info" href="visitas_url.php?url=<?php echo urlencode($pagina->url) ?>">
-                                                <i class="fa fa-chart-area"></i>
-                                            </a>
-                                        </td>
                                     </tr>
                                 <?php } ?>
                             </tbody>
