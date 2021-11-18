@@ -44,6 +44,7 @@ $paginas = obtenerPaginasVisitadasEnFecha($hoy);
 $visitantes = obtenerVisitantesEnRango($inicio, $fin);
 $visitas = obtenerVisitasEnRango($inicio, $fin);
 ?>
+<div id="galeria" class="col-lg-10 col-md-10 col-sm-9 col-xs-12">
 <section class="section">
     <div class="columns">
 
@@ -117,13 +118,13 @@ $visitas = obtenerVisitasEnRango($inicio, $fin);
                         </table>
                     </div>
                 </div>
-                <footer class="card-footer">
-                
+                <footer class="card-footer"> 
                 </footer>
             </div>
         </div>
     </div>
 </section>
+</div>
 <script type="text/javascript">
     // Pasar variable de PHP a JS
     const visitantes = <?php echo json_encode($visitantes) ?>;
