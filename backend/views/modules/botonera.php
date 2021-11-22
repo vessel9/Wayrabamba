@@ -31,7 +31,7 @@ COLUMNA BOTONERA
                         <li><a href="inicio" style="color:white;"><span class="glyphicon glyphicon-home text-info" style="color:white;"></span> Inicio</a></li>
                         <li><a href="productoservicios" style="color:white;"><span class="fa fa-shopping-bag" style="color:white;"></span> Producto/servicio</a></li>
                         <li><a href="negocios" style="color:white;"><span class="fa fa-briefcase" style="color:white;"></span> Negocios</a></li>
-                        <li><a href="slide" style="color:white;"><span class="glyphicon glyphicon-sound-stereo" style="color:white;"></span> Diapositivas</a></li>
+                        <li><a href="slide" style="color:white;"><span class="glyphicon glyphicon-sound-stereo" style="color:white;"></span> Publicaciones</a></li>
                         <li><a href="articulos" style="color:white;"><span class="fa fa-newspaper-o" style="color:white;"></span> Artículos</a></li>
                         <li><a href="galeria" style="color:white;"><span class="glyphicon glyphicon-picture" style="color:white;"></span> Imágenes</a></li>
                         <li><a href="videos" style="color:white;"><span class="glyphicon glyphicon-expand" style="color:white;"></span> Videos</a></li>

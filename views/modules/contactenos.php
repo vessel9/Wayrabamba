@@ -2,7 +2,7 @@
 
 	<hr>
 	
-	<h1 class="text-center text-info"><b><span class="glyphicon glyphicon-envelope" ></span> CONTÁCTENOS</b></h1>
+	<h1 class="text-center text-info" style="color:#029CDF;"><b><span class="glyphicon glyphicon-envelope" ></span> CONTÁCTENOS</b></h1>
 
 	<hr>
 	

@@ -37,7 +37,7 @@ INICIO
 			<a href="slide">
 			<div style="background-color:#4CF53A; color: white;border: 2px solid #4CF53A;" onMouseOver="this.style.width='181px';this.style.height='181px';this.style.backgroundColor='#40d41c'" onMouseOut="this.style.width='150px';this.style.height='150px';this.style.backgroundColor = '#4CF53A'" >
 			<span class="fa fa-toggle-right"></span>
-			<p>Slide</p>
+			<p>Publicaciones</p>
 			</div>
 			</a>
 
