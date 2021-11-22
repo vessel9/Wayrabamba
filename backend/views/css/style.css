@@ -625,6 +625,11 @@ ARTICULOS
 	border:2px solid #ccc;
 	padding:20px;
 }
+#agregarNegocio{
+	margin:20px auto;
+	border:2px solid #ccc;
+	padding:20px;
+}
 
 
 #agregarArtículo input{

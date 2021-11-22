@@ -49,9 +49,9 @@ NEGOCIO ADMINISTRABLE
 			<div id="arrastreImagenNegocio"></div>
             <label> Teléfono</label>
 			<input name="telefonoNegocio" type="number" onkeydown="return event.keyCode !== 69"  minlength="10" maxlength="10"  oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" placeholder="Teléfono" class="form-control" required>
-			<label>Complete con el número de watsApp sin el 0 inicial</label>
-			<div class="alert alert-success alerta text-center">¡No borre el link y solo ingrese 9 digitos!</div>
+			<br>
 			<input value="https://wa.me/593" name="WhatsApp" placeholder="si borro el link recarge la pagina" type="tel" onkeydown="return event.keyCode !== 69"  minlength="26" maxlength="26"  oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" placeholder="WhatsApp" class="form-control" required>
+			<FONT COLOR="red">Complete con el número de watsApp sin el 0 inicial</FONT>
 			<label>Email</label>
 			<input name="correoNegocio" type="email" id="email"  placeholder="Email" class="form-control" required><span id="emailOK"></span>
 			<label>Dirección del negocio</label>
