@@ -620,6 +620,13 @@ ARTICULOS
 	padding:20px;
 }
 
+#agregarProductoServicio{
+	margin:20px auto;
+	border:2px solid #ccc;
+	padding:20px;
+}
+
+
 #agregarArtículo input{
 	margin-bottom:20px;
 }

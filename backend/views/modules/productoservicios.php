@@ -51,9 +51,13 @@ TIPO DE SERVICIO ADMINISTRABLE
 			<div class="form-group">
 			<?php
 		     $mostrarProductoServicio = new GestorProductoServicio();
+			 echo '<br>';
 			 $mostrarProductoServicio -> mostrarProductoServicioController2(); 
+			echo '<br>';
 		     $mostrarProductoServicio -> mostrarProductoServicioController3();
+			 echo '<br>';
 		     $mostrarProductoServicio -> mostrarProductoServicioController4();	
+			 echo '<br>';
 		    ?>
 			</div>
 			<div class="form-group">
